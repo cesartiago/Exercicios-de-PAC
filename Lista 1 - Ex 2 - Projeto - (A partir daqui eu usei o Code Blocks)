@@ -1,0 +1,28 @@
+//============================================================================
+// Name        :Lista 1 - Ex 2 - Projeto - (A partir daqui eu usei o Code Blocks).cpp
+// Author      : Tiago Cesar Cunha da Costa
+// Version     :
+// Copyright   : Open
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+float percentual_de_reprovados (float quantidade_de_alunos, float quantidade_de_alunos_aprovados)
+
+{
+	return 100-((quantidade_de_alunos_aprovados/quantidade_de_alunos)*100);
+}
+
+
+
+int main() /*Ele não pede mas eu quis fazer para testar */
+{
+	int a;
+	int b;
+	cin >> a;
+	cin >> b;
+	cout << "Percentual de Rreprovados " << percentual_de_reprovados (a, b) << "%" << endl; // Você chama a função aqui em cout
+	return 0;
+}
