@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+float Vcaixa (float a, float b, float c)
+{
+	return a*b*c;
+}
+
+float Vcilindro (float r, float h)
+{
+	return M_PI*h*r*r;
+}
+
+
+int main()
+{
+    float a, b, h, d, VolCaixaFurada;
+    cout << "Digite a e b. Depois h (altura) e d (diâmetro)" << endl; //Para me guiar/ajudar
+    cin >> a >> b >> h >> d; //Preste atenção no pedido do enunciado!
+
+    VolCaixaFurada = Vcaixa (a,b,h) - Vcilindro (d/2, h);
+
+    cout << "Volume = " << VolCaixaFurada << endl;
+    return 0;
+}
