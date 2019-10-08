@@ -1,0 +1,24 @@
+//============================================================================
+// Name        : Lista 1 - Ex 1.cpp
+// Author      : Tiago Cesar Cunha da Costa
+// Version     :
+// Copyright   : Open
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+float imc(float peso, float altura)
+{
+    return peso/(altura*altura);
+}
+
+int main()
+{
+    float altura, peso;
+    cin >> altura;
+    cin >> peso;
+    cout << "Meu IMC é " << imc(peso,altura);
+    return 0;
+}
