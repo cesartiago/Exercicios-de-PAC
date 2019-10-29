@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+
+    float Horario [8*2]; //Trabalha 8 horas por dia. E a divisão é em 30 e 30 minutos cada, que é o tempo de demora. Então é de 0 à 15
+    int i, aux, contador;
+    i = 0;
+
+    cout << "Digite o horario no formato: \"Hora.Minuto\". Exemplo: 12.30 = 12h e 30 min" << endl;
+        for (i=0; i < 16; i++)
+        {
+              cin >> Horario[i];  // Vai pegando cada vetor, do 0 à 15 aqui, dependendo de "i".
+
+        }
+
+        //Algoritimo de ordenação Bubble Sort (Tipo bolha)
+        for (contador = 1; contador < 16; contador ++)
+        {                                       /* 16 é o tamanho do Vetor Horario (8*2). E nessa linha nós pedimos para entrar
+                                                com os valores do vetor 16 vezes*/
+
+            for (i = 0; i < 16 -1 ; i++) //Realizaremos if PARA CADA (= USE FOR) valor do vetor
+                                        // OBS: è até Horario -1 pois o PENúltimo a gente vai comparar com o último e AÍ ACABA!
+            {
+                if (Horario [i] > Horario[i+1]) //Se o horário do vetor, a partir da posição 0, for MAIOR que o próximo h do vetor
+                {
+                    aux = Horario [i]; //Aux recebe Horario i
+                    Horario [i] = Horario [i+1];
+                    Horario [i+1] = aux; // Essa é "a volta", quando o MENOR horario vai para o "banco de trás"
+
+
+                }
+            }
+        }
+
+        cout << "Horarios em ordem crescente" << endl;
+        for (i= 0; i< 16; i++) // Igual ao que já fizemos a cima
+        {
+            cout << Horario[i] << endl;
+        }
+
+return 0;
+}
