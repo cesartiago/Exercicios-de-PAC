@@ -8,8 +8,9 @@ int main()
 
 
     float Horario [8*2]; //Trabalha 8 horas por dia. E a divisão é em 30 e 30 minutos cada, que é o tempo de demora. Então é de 0 à 15
-    int i, aux, contador;
+    int i, contador;
     i = 0;
+    float aux;
 
     cout << "Digite o horario no formato: \"Hora.Minuto\". Exemplo: 12.30 = 12h e 30 min" << endl;
         for (i=0; i < 16; i++)
