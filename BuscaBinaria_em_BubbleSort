@@ -1,0 +1,114 @@
+//Code
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+//----------------------------------------------- COMEÇA O MÉTODO TIPO BOLHA = BUBBLE SORT ------------------------------
+    float Horario [8*2]; //Trabalha 8 horas por dia. E a divisão é em 30 e 30 minutos cada, que é o tempo de demora. Então é de 0 à 15
+    int i, contador;
+    i = 0;
+    float aux;
+
+    cout << "Digite o horario no formato: \"Hora.Minuto\". Exemplo: 12.30 = 12h e 30 min" << endl;
+        for (i=0; i < 16; i++)
+        {
+              cin >> Horario[i];  // Vai pegando cada vetor, do 0 à 15 aqui, dependendo de "i".
+
+        }
+
+        //Algoritimo de ordenação Bubble Sort (Tipo bolha)
+        // Ele analisa os elementos em pares...
+        for (contador = 1; contador < 16; contador ++)
+        {                                       /* 16 é o tamanho do Vetor Horario (8*2). E nessa linha nós pedimos para entrar
+                                                com os valores do vetor 16 vezes*/
+
+            for (i = 0; i < 16 -1 ; i++) //Realizaremos if PARA CADA (= USE FOR) valor do vetor
+                                        // OBS: è até Horario -1 pois o PENúltimo a gente vai comparar com o último e AÍ ACABA!
+            {
+                if (Horario [i] > Horario[i+1]) //Se o horário do vetor, a partir da posição 0, for MAIOR que o próximo h do vetor
+                {
+                    aux = Horario [i]; //Aux recebe Horario i
+                    Horario [i] = Horario [i+1];
+                    Horario [i+1] = aux; // Essa é "a volta", quando o MENOR horario vai para o "banco de trás"
+
+
+                }
+            }
+        }
+
+        cout << "Horarios em ordem crescente" << endl;
+        for (i= 0; i< 16; i++) // Igual ao que já fizemos a cima
+        {
+            cout << Horario[i] << endl;
+        }
+
+
+//----------------------------------------------- COMEÇA A BUSCA BINÁRIA ------------------------------------------------------
+
+// Com o ARRAY JÁ ORDENADO:
+int inicio = 0; // É a setinha que NO COMEÇO aponta para a posição 0, A PRIMEIRA, na tabelinha unidirecional do vetor
+int posicao_do_meio = 0;                //É o meio termo entre o início e o fim sempre
+int fim = 16-1; // É a setinha que NO COMEÇO aponta para a posição 15, A ÚLTIMA, na tabelinha unidirecional do vetor
+int procurado = 0; // É o que a pessoa VAI ENTRAR DIGITANDO, QUERENDO ACHAR
+
+    for (int i = 0; i=3; i++) //Loop para não sair e preguntar três vezes qual número você quer achar.
+        {
+
+
+            cout << "Digite o horario procurado" << endl;
+            cin >> procurado;
+
+            while (inicio <= fim) // Enquanto o inicio for menor ou igual... Faça a média/o corte
+                {
+                    posicao_do_meio = (inicio+fim)/2;
+                        if (Horario [posicao_do_meio] == procurado) // Se o VETOR que usamos (Horario) na POSIÇÃO_DO_MEIO... For igual ao que eu procuro, o PROCURADO, retorne-o
+                        {
+                            cout <<  "Ele se encontra na posicao:" << posicao_do_meio << "  " << "Valor final de inicio:" << inicio << "  " << "Valor final de fim:" << fim << "  "<< endl;
+                            //Ele não aceita escrever variável junto com texto. Tem uqe ser << variável e << "texto";
+inicio = 0; // Reset os valores para continuar refazendo direito. SE NÃO DÁ RUIM! NÃO É PRA DECLARAR DE NOVO(EX: int inicio = 0)!!!
+posicao_do_meio = 0;
+fim = 16-1;
+                            break; //Pause o loop para não retornar em "every tick"
+                        }
+                        else
+                        {
+                            if (Horario [posicao_do_meio] > procurado ) // Se isso é VERDADEIRO, nós estamos procurando por algo que está antes do meio, então desconsideramos o resto
+                            {
+                                fim = posicao_do_meio - 1;
+
+                            }
+                            else // Se não é maior e nem igual LOGO será MENOR. ENTÃO DESCONSIDERA A ESQUERDA SOMANDO + 1 AO INICIO
+                            {
+                                inicio = posicao_do_meio + 1;
+
+                            }
+                        }
+                }
+
+
+            if (inicio > fim) // Se o inicio passar o fim, ou se for subtraido de forma a chegar a menos 1("||" significa "OU Lógico")
+            {
+                cout << "O horario nao foi reservado +" << "  " << "Valor final de inicio:" << inicio << "  " << "Valor final de fim:" << fim << "  "<< endl;
+                // Não precisa de break pois não é um loop ou switch, é if
+inicio = 0; // Reset os valores para continuar refazendo direito. SE NÃO DÁ RUIM! NÃO É PRA DECLARAR DE NOVO(EX: int inicio = 0)!!!
+posicao_do_meio = 0;
+fim = 16-1;
+
+            }
+            if (inicio == -1) // ATENÇÃO, NÃO ESQUEÇA, == NO IF PARA COMPARAR. SÓ = ATRIBUI VALOR
+            {
+                cout << "O horario nao foi reservado -" << "  " << "Valor final de inicio:" << inicio << "  " << "Valor final de fim:" << fim << "  "<< endl;
+                // Não precisa de break pois não é um loop ou switch, é if
+inicio = 0; // Reset os valores para continuar refazendo direito. SE NÃO DÁ RUIM! NÃO É PRA DECLARAR DE NOVO(EX: int inicio = 0)!!!
+posicao_do_meio = 0;
+fim = 16-1;
+
+            }
+
+
+        }
+return 0;
+}
