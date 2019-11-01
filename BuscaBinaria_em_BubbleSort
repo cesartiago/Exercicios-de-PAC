@@ -52,7 +52,7 @@ int main()
 int inicio = 0; // É a setinha que NO COMEÇO aponta para a posição 0, A PRIMEIRA, na tabelinha unidirecional do vetor
 int posicao_do_meio = 15/2;                //É o meio termo entre o início e o fim sempre
 int fim = 16-1; // É a setinha que NO COMEÇO aponta para a posição 15, A ÚLTIMA, na tabelinha unidirecional do vetor
-float procurado = 0; // É o que a pessoa VAI ENTRAR DIGITANDO, QUERENDO ACHAR !!TEM QUE SER FLOAT CARA!! OMG
+float procurado = 0; // É o que a pessoa VAI ENTRAR DIGITANDO, QUERENDO ACHAR !!TEM QUE SER FLOAT CARA!! OMG de novo essa conversão
 
     for (int i = 0; i=3; i++) //Loop para não sair e preguntar três vezes qual número você quer achar.
         {
