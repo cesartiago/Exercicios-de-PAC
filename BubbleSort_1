@@ -20,6 +20,7 @@ int main()
         }
 
         //Algoritimo de ordenação Bubble Sort (Tipo bolha)
+        // Ele analisa os elementos em pares...
         for (contador = 1; contador < 16; contador ++)
         {                                       /* 16 é o tamanho do Vetor Horario (8*2). E nessa linha nós pedimos para entrar
                                                 com os valores do vetor 16 vezes*/
