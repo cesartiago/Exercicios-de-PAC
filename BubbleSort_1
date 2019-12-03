@@ -1,4 +1,3 @@
-//Code
 #include <iostream>
 
 using namespace std;
@@ -7,10 +6,10 @@ int main()
 {
 
 
-    float Horario [8*2]; //Trabalha 8 horas por dia. E a divisão é em 30 e 30 minutos cada, que é o tempo de demora. Então é de 0 à 15
+    float Horario [8*2]; //= 16 -> Pois: Trabalha 8 horas por dia. E a divisão é em 30 e 30 minutos cada, que é o tempo de demora. Então é de 0 à 15
     int i, contador;
+    float  aux;
     i = 0;
-    float aux;
 
     cout << "Digite o horario no formato: \"Hora.Minuto\". Exemplo: 12.30 = 12h e 30 min" << endl;
         for (i=0; i < 16; i++)
@@ -20,7 +19,6 @@ int main()
         }
 
         //Algoritimo de ordenação Bubble Sort (Tipo bolha)
-        // Ele analisa os elementos em pares...
         for (contador = 1; contador < 16; contador ++)
         {                                       /* 16 é o tamanho do Vetor Horario (8*2). E nessa linha nós pedimos para entrar
                                                 com os valores do vetor 16 vezes*/
